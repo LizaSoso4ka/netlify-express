@@ -16,7 +16,7 @@ router.get("/", (req, res) => {
                 + currentdate.getMinutes() + ":" 
                 + currentdate.getSeconds();
   const remoteAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  ips["ips"].push(datetime + ' | ' + remoteAddress);
+  ips["ips"].push(datetime + ' | ' + remoteAddress.split(', ')[0]);
 	
 	
 	
