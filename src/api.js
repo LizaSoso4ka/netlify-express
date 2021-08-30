@@ -234,7 +234,8 @@ router.get("/", (req, res) => {
 
   
 router.get("/ip", (req, res) => {
-  res.json(ips);
+  res.header("Content-Type",'application/json');
+  res.send(JSON.stringify(ips, null, 4));
 });
 
 
