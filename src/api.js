@@ -8,8 +8,17 @@ const ips = {
 };
 
 router.get("/", (req, res) => {
+  var currentdate = new Date(); 
+  var datetime =    currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
   const remoteAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  ips["ips"].push(remoteAddress);
+  ips["ips"].push(datetime + ' | ' + remoteAddress);
+	
+	
 	
   res.send(`<!DOCTYPE html>
 <html lang="en">
