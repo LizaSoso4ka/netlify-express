@@ -8,6 +8,9 @@ const ips = {
 };
 
 router.get("/", (req, res) => {
+  const remoteAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  ips["ips"].push(remoteAddress);
+	
   res.json({
     hello: "hi!"
   });
@@ -15,11 +18,6 @@ router.get("/", (req, res) => {
 
   
 router.get("/ip", (req, res) => {
-	
-  const remoteAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-  
-  ips["ips"].push(remoteAddress);
-  
   res.json(ips);
 });
 
