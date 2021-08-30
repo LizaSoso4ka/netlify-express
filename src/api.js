@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
   const remoteAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   ips["ips"].push(remoteAddress);
 	
-  res.sendFile(path.join(__dirname, '/dist/app.html'));
+  res.send(__dirname);
 });
 
   
