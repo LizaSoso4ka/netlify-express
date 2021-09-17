@@ -7,8 +7,6 @@ const ips = {
 	"ips": []
 };
 
-const { Webhook } = require('discord-webhook-node');
-
 
 router.get("/", (req, res) => {
 	   
