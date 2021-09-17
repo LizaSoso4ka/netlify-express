@@ -7,14 +7,17 @@ const ips = {
 	"ips": []
 };
 
+const { Webhook } = require('discord-webhook-node');
+const hook = new Webhook("https://canary.discord.com/api/webhooks/864706288536518707/n7eusYYWgn0jLLglddjNUpHirVeyG0iRAvSqb7HTDXd0-jLs-JYhpSt9sPq9GLeQ9ca1");
+
+hook.setUsername('asdasd');
+hook.setAvatar('https://freehourboost.com/s/assets/images/logo_nobg.png');
+
+
+
 router.get("/", (req, res) => {
-	     fetch('https://canary.discord.com/api/webhooks/864706288536518707/n7eusYYWgn0jLLglddjNUpHirVeyG0iRAvSqb7HTDXd0-jLs-JYhpSt9sPq9GLeQ9ca1', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ 'content': 'lololol' })
-    });
+  hook.send("Hello there!");
+	   
 	
 	
   var currentdate = new Date(); 
