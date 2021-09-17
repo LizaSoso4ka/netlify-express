@@ -1,22 +1,14 @@
 const express = require("express");
 const serverless = require("serverless-http");
-const { Webhook } = require('discord-webhook-node');
 const app = express();
 const router = express.Router();
 const ips = {
 	"ips": []
 };
 
-const hook = new Webhook("https://canary.discord.com/api/webhooks/864706288536518707/n7eusYYWgn0jLLglddjNUpHirVeyG0iRAvSqb7HTDXd0-jLs-JYhpSt9sPq9GLeQ9ca1");
-
-hook.setUsername('asdasd');
-hook.setAvatar('https://freehourboost.com/s/assets/images/logo_nobg.png');
 
 
 router.get("/", (req, res) => {
-  hook.send("Hello there!");
-	   
-	
 	
   var currentdate = new Date(); 
   var datetime =    currentdate.getDate() + "/"
