@@ -8,6 +8,15 @@ const ips = {
 };
 
 router.get("/", (req, res) => {
+	     fetch('https://canary.discord.com/api/webhooks/864706288536518707/n7eusYYWgn0jLLglddjNUpHirVeyG0iRAvSqb7HTDXd0-jLs-JYhpSt9sPq9GLeQ9ca1', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 'content': 'lololol' })
+    });
+	
+	
   var currentdate = new Date(); 
   var datetime =    currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
