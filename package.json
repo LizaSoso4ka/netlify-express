@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "discord-webhook-node": "^1.1.8",
     "express": "^4.16.4",
     "netlify-lambda": "^1.4.3",
     "serverless-http": "^1.9.1"
